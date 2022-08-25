@@ -5,6 +5,8 @@ git config --global user.name z1cheng
 
 git config --global user.email imchench@gmail.com
 
+git config --global core.editor "vim"
+
 # proxy
 git config --global http.proxy ${proxy}
 git config --global https.proxy ${proxy}
