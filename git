@@ -11,3 +11,9 @@ git config --global core.editor "vim"
 proxy="something"
 git config --global http.proxy ${proxy}
 git config --global https.proxy ${proxy}
+
+# Delete other branches for Linux/MacOS
+git branch -D $(git branch | grep -vE 'master|main')
+
+# Untrack files and add them back to make gitignore work
+git rm -r --cached . && git add .

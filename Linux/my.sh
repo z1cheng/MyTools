@@ -1,6 +1,3 @@
-# Delete other branches
-git branch -D $(git branch | grep -vE 'master|main')
-
 # OOM
 bash -c "for b in {0..99999999}; do a=$b$a; done"
 
