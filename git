@@ -15,5 +15,8 @@ git config --global https.proxy ${proxy}
 # Delete other branches for Linux/MacOS
 git branch -D $(git branch | grep -vE 'master|main')
 
+# Delete other branches for Windows Powershell
+git branch -D  @(git branch | select-string -NotMatch "master" | select-string -NotMatch "main" |  Foreach {$_.Line.Trim()})
+
 # Untrack files and add them back to make gitignore work
 git rm -r --cached . && git add .
