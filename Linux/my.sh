@@ -9,3 +9,7 @@ sudo bash -c "echo 'your text' >> /path/to/your/file"
 # Etcdctl
 etcdPodName="etcd-minikube"
 alias ectl="kubectl exec -it -n kube-system ${etcdPodName} -- etcdctl --cacert='/var/lib/minikube/certs/etcd/ca.crt' --cert='/var/lib/minikube/certs/etcd/peer.crt' --key='/var/lib/minikube/certs/etcd/peer.key'"
+
+
+# Get all feature gates in a Kubernetes cluster
+kubectl get --raw /metrics | grep kubernetes_feature_enabled
