@@ -13,3 +13,6 @@ alias ectl="kubectl exec -it -n kube-system ${etcdPodName} -- etcdctl --cacert='
 
 # Get all feature gates in a Kubernetes cluster
 kubectl get --raw /metrics | grep kubernetes_feature_enabled
+
+# Create a copy of $pod changing the command of $container to bash
+kubectl debug -n $ns $pod  -it --copy-to=my-debugger --container=$container -- bash
